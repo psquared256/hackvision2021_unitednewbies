@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">ShelterAlertApp</string>
+    <string name="cust_app_name">ShelterAlert App</string>
+    <string name="username">Username: </string>
+    <string name="shelter_id">Shelter ID:</string>
+    <string name="password">Password: </string>
+    <string name="login">Login</string>
+    <string name="contact">Contact Us</string>
+    <string name="username_enter">Enter your username here </string>
+    <string name="shelter_id_enter">Enter your Shelter ID here</string>
+    <string name="password_enter">Enter your Password here</string>
+    <string name="name"> Name: </string>
+    <string-array name="names">
+        <item>Guest name 1</item>
+        <item>Guest name 2</item>
+        <item>Guest name 3</item>
+        <item>Guest name 4</item>
+    </string-array>
+</resources>

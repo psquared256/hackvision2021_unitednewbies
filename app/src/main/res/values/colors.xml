@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!--Chosen pastels colour palette from the app design-->
+    <color name="cp1">#8D2152</color>
+    <color name="cp2">#218D5C</color>
+    <color name="cp3">#FF1053</color>
+    <color name="cp4">#6C6EA0</color>
+
+    <color name="cp5">#66C7F4</color>
+
+    <color name="cp6">#CAB8FF</color>
+    <color name="cp7">#C1CAD6</color>
+    <color name="underline">#FFCCD2</color>
+</resources>

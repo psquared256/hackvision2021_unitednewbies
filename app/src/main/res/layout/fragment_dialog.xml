@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/landing_bg"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <TextView
+        android:text="Create new safety Check"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        android:textStyle="italic"
+        android:elevation="15dp"
+        android:layout_margin="15dp"
+        android:padding="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="25dp"
+        android:layout_margin="30dp"
+        android:background="@drawable/shape_bg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="Contact:"
+            style="@style/SubTitle"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:hint="Enter the contact phone number"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            app:boxBackgroundColor="@color/white"
+            app:errorEnabled="true"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/loginSId"
+                android:layout_width="match_parent"
+                android:layout_height="38dp"
+                android:ems="10"
+                android:inputType="textEmailAddress"
+
+                android:maxLines="1" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:text="@string/name"
+            style="@style/SubTitle"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:hint="Enter your contact's name here"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            app:boxBackgroundColor="@color/white"
+            app:errorEnabled="true"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:id="@+id/loginUsername"
+                android:ems="10"
+
+                android:maxLines="1"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:text="Relation: "
+            style="@style/SubTitle"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:hint="Enter your relation to contact here"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="5dp"
+            app:boxBackgroundColor="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:id="@+id/loginPassword"
+                android:ems="10"
+                android:maxLines="1"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/SaveBtn"
+                android:text="Save"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:layout_margin="5dp"
+                android:textColor="@color/white"
+                android:background="@drawable/btn1"
+                app:backgroundTint="@null"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <Button
+                android:id="@+id/cancel_btn"
+                android:text="Cancel"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:layout_margin="5dp"
+                android:textColor="@color/white"
+                android:background="@drawable/btn2"
+                app:backgroundTint="@null"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
+
