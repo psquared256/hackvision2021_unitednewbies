@@ -1,4 +1,4 @@
-# HackVision: The ShelterAlter App by UnitedNewbies
+# HackVision: The ShelterAlert App by UnitedNewbies
 
 
 ### Coding description and demonstration walkthrough
