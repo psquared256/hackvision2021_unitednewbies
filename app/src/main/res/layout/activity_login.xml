@@ -51,7 +51,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textEmailAddress"
-                android:id="@+id/loginSId"
+                android:id="@+id/sId"
                 android:ems="10"
 
                 android:maxLines="1"

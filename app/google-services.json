@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "616909061551",
+    "project_id": "shelteralertapp",
+    "storage_bucket": "shelteralertapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:616909061551:android:e0f650620031f3bfb2035a",
+        "android_client_info": {
+          "package_name": "hackvision.unitednewbies.shelteralert"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "616909061551-fd4dh1pdvin0q840jnhp9i400iit3su1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBATtgOSAB0tlL4a88phBjkgBdNpAi4OIo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "616909061551-fd4dh1pdvin0q840jnhp9i400iit3su1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

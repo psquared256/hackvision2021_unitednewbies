@@ -11,9 +11,9 @@
     <string name="password_enter">Enter your Password here</string>
     <string name="name"> Name: </string>
     <string-array name="names">
-        <item>Guest name 1</item>
-        <item>Guest name 2</item>
-        <item>Guest name 3</item>
-        <item>Guest name 4</item>
+        <item>guest name 1</item>
+        <item>guest name 2</item>
+        <item>guest name 3</item>
+        <item>guest name 4</item>
     </string-array>
 </resources>

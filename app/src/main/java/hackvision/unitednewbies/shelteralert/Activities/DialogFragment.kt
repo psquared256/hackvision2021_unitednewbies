@@ -1,9 +1,11 @@
 package hackvision.unitednewbies.shelteralert.Activities
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
@@ -21,6 +23,9 @@ class DialogFragment(): BottomSheetDialogFragment() {
         // to simply display the list of errors from the Profile creating and login screens
         //val errorMsg = view.findViewById<TextView>(R.id.textView)
         // errorMsg.text = message
+        view.findViewById<Button>(R.id.cancel_btn).setOnClickListener{
+
+        }
         return view
     }
 }

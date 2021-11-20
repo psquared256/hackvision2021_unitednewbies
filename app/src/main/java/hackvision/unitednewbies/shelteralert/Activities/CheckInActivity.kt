@@ -1,17 +1,22 @@
 package hackvision.unitednewbies.shelteralert.Activities
 
+import android.content.ContentValues.TAG
 import android.content.Intent
+import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.os.Handler
-import android.widget.ArrayAdapter
-import android.widget.Button
+import android.util.Log
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.storage.FirebaseStorage
 import hackvision.unitednewbies.shelteralert.R
 import hackvision.unitednewbies.shelteralert.databinding.ActivityCheckinBinding
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
+import java.io.File
 
 class CheckInActivity: AppCompatActivity() {
 
-    lateinit var viewModel: CheckInActivity
     lateinit var binding : ActivityCheckinBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,6 +24,7 @@ class CheckInActivity: AppCompatActivity() {
         binding = ActivityCheckinBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // to set the drop down menu UI widget
         val dd2 = resources.getStringArray(R.array.names)
         val arrayAdapter2 = ArrayAdapter(this, R.layout.dropdown_list_item, dd2)
 
@@ -26,72 +32,48 @@ class CheckInActivity: AppCompatActivity() {
 
        // supportActionBar?.title = "Questions"
 
-        // progress bar
+        // progress bar: concurrency for better performance and visibility of system status
         val loading = LoadingDialog(this)
         loading.startLoading()
         val handler = Handler()
         handler.postDelayed({ loading.isDismiss() },2000)
 
+        val name = binding.names.text.toString()
 
         val submitBtn = findViewById<Button>(R.id.submitBtn)
         submitBtn.setOnClickListener{
-            val intent = Intent(this, GuestProfileActivity::class.java)
+
+            val intent = Intent(this, GuestProfileActivity::class.java).run{
+                putExtra("name", name)
+            }
             startActivity(intent)
         }
-        // val qList = findViewById<RecyclerView>(R.id.qList)
 
-        /*  viewModel = ViewModelProvider(this).get(CheckInViewModel::class.java)
+        val searchBtn = findViewById<ImageView>(R.id.search_btn)
+        searchBtn.setOnClickListener{
+            binding.img.setImageResource(R.drawable.person)
 
-          // setting an observer to respond to the live data
-          viewModel.questions.observe(this, Observer {
+            // to retrive the image based on the guest from firebase storage
+            /*Log.i(name, TAG)
+            // search the database for the guests name list and call its image from the storage
+            val storageRef = FirebaseStorage.getInstance("gs://shelteralertapp.appspot.com/").reference.child("$name.jpg")
+            val localFile = File.createTempFile("tempImg", "jpg")
+            storageRef.getFile(localFile)
 
-              val linearLayoutManager = LinearLayoutManager(this)
-              qList.layoutManager = linearLayoutManager
+            // changing dispatcher context to handle the view elements
 
-              val adapter = QuestionsAdapter(it){deleteQuestion(it)}
-              qList.adapter = adapter
-          })
+            val bitmap = BitmapFactory.decodeFile(localFile.absolutePath)
+            binding.img.setImageBitmap(bitmap)*/
 
-          addQuestion()*/
-
-    }
-
-    private fun addQuestion(){
-        /*val addBtn = findViewById<Button>(R.id.post_q)
-
-        addBtn.setOnClickListener(){
-            val newQuestion = findViewById<EditText>(R.id.newQuestion)
-            // the new question is first added to the mutable list then reflected in the live data object
-            viewModel.questionsList.add(newQuestion.text.toString())
-            viewModel.questions.value = viewModel.questionsList
-
-            val questionsPresenter = QuestionsController()
-            questionsPresenter.addQuestionToDatabase(newQuestion.text.toString())
-
-            newQuestion.setText("")
-        }*/
+        }
 
     }
 
-    private fun deleteQuestion(item: String){
-        /* DatabaseRef.databaseQuestions.orderByKey().addListenerForSingleValueEvent(object: ValueEventListener {
-             override fun onDataChange(dataSnapshot: DataSnapshot) {
-                 val snapshotIterator = dataSnapshot.children
-                 val iterator: Iterator<DataSnapshot> = snapshotIterator.iterator()
-                 while (iterator.hasNext()) {
-                     iterator.next().let {
-                         if (it.value.toString() == item) {
-                             it.key?.let { DatabaseRef.databaseQuestions.child(it).removeValue() }
-                             Snackbar.make(findViewById<Button>(R.id.post_q), "Question has been deleted", Snackbar.LENGTH_SHORT).show()
-                         }
-                     }
-                 }
-             }
-
-             override fun onCancelled(databaseError: DatabaseError) {}
-         })
-         viewModel.questionsList.remove(item)
-         viewModel.questions.value = viewModel.questionsList*/
+    override fun onBackPressed() {
+        Toast.makeText(this, "You've logged out", Toast.LENGTH_SHORT).show()
+        super.onBackPressed()
     }
+
+
 
 }

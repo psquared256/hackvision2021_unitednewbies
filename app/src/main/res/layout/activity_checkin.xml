@@ -38,23 +38,41 @@
             android:text="Name: "
             style="@style/SubTitle"/>
 
+        <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center">
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/x_small"
+            android:orientation="horizontal">
 
             <AutoCompleteTextView
                 android:id="@+id/names"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="0.10"
                 android:layout_gravity="end"
                 android:inputType="none"
                 android:text="Select a name"
                 android:textSize="18dp" />
 
+
         </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_weight="0.90"
+        android:tint="@color/cp3"
+        android:id="@+id/search_btn"
+        android:src="@drawable/ic_search_black_24dp"/>
+
+    </LinearLayout>
 
         <TextView
             android:text="Photo:"
@@ -70,7 +88,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
-            <com.google.android.material.textfield.TextInputEditText
+            <!--com.google.android.material.textfield.TextInputEditText
                 android:layout_width="200dp"
                 android:layout_height="200dp"
                 android:layout_gravity="center"
@@ -78,7 +96,11 @@
                 android:id="@+id/loginUsername"
                 android:ems="10"
                 android:maxLines="0"
-                />
+                /-->
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:id="@+id/img" />
         </com.google.android.material.textfield.TextInputLayout>
 
 
